@@ -1,0 +1,436 @@
+:root {
+    --grey: #999999;
+    --dark-grey: #333333;
+    --white: #ffffff;
+    --navajo-white: #fce38a;
+    --navajo-white-90: #fce38ae6;
+    --deep-pink: #f38181;
+    --deep-pink-90: #f38181e6;
+    --light-blue: #95e1d3;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-style: italic;
+    src: local('Roboto'),
+        url('fonts/Roboto-LightItalic.woff2') format('woff2'),
+        url('fonts/Roboto-LightItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    src: local('Roboto'),
+        url('fonts/Roboto-Regular.woff2') format('woff2'),
+        url('fonts/Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Kaushan Script';
+    font-weight: 400;
+    font-style: normal;
+    src: local('Kaushan Script'),
+        url('fonts/KaushanScript-Regular.woff2') format('woff2'),
+        url('fonts/KaushanScript-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    src: local('Montserrat'),
+        url('fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('fonts/Montserrat-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-style: normal;
+    src: local('Montserrat'),
+        url('fonts/Montserrat-Bold.woff2') format('woff2'),
+        url('fonts/Montserrat-Bold.woff') format('woff');
+}
+
+/*font-family: 'Kaushan Script', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--grey);
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+dl {
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Header
+=============*/
+
+.header {
+    width: 100%;
+    height: auto;
+    background: url('images/background-header.jpg') center no-repeat;
+    background-size: cover;
+    padding-top: 25px;
+}
+
+.header__top {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content max-content;
+    align-items: center;
+}
+
+.header__logo {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.header__nav {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.header__link-nav {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 55px;
+    position: relative;
+}
+.header__link-nav:first-child {
+    margin-left: 0;
+}
+
+.header__link-nav::after,
+.header__link-nav--active::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #fce38a;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: none;
+}
+
+.header__link-nav:hover {
+    color: var(--navajo-white);    
+}
+
+.header__link-nav:hover::after {
+    display: block;
+}
+
+.header__link-nav--active {
+    color: var(--navajo-white);
+}
+
+.header__link-nav--active::after {
+    display: block;
+}
+
+.header__middle {
+    text-align: center;
+    padding: 200px 50px 155px;
+}
+
+.header__suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 70px;
+}
+
+.header__title {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 150px;
+    line-height: 140px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.header__title::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background-color: var(--white);
+    display: block;
+    margin: 70px auto 0;
+}
+
+.header__link-btn {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 10px 25px 10px 30px;
+    border: 3px solid var(--white);
+    text-decoration: none;
+}
+
+.header__link-btn:hover {
+    color: var(--navajo-white);
+    background-color: var(--white);
+}
+
+.header__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);    
+}
+
+.header__item {
+    margin: 0 0 25px;
+    opacity: 0.7;
+}
+
+.header__item::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.header__item--active {
+    opacity: 1;
+    position: relative;
+}
+
+.header__item--active::after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background-color: var(--deep-pink);
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.header__text {
+    font-size: 18px;
+    font-weight: 400;    
+}
+
+
+/* About
+=============*/
+
+.suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--dark-grey);
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+}
+
+.title::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background-color: var(--deep-pink);
+    display: block;
+    margin: 40px auto 0;    
+}
+
+.about {
+    background-color: var(--white);
+    text-align: center;
+    padding: 100px 0 0;
+}
+
+.about__content {
+    padding: 0 105px;
+}
+
+.about__title {
+    margin-bottom: 45px;
+}
+
+.about__gallery {
+    padding: 90px 0 110px;
+}
+
+/*.about__staff {
+    width: 100%;
+    height: auto;
+    background-color: var(--light-blue);
+    color: var(--white);
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.about__list-staff {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about__staff-item {
+    width: 20%;
+    padding-bottom: 85px;
+    border-right: 1px solid var(--white);
+    border-left: 1px solid var(--white);
+}
+
+.about__number {
+    font-size: 72px;
+    font-weight: 700;
+    padding: 105px 0 35px;
+}
+
+.about__official {
+    margin: 0;
+}*/
+
+/* Gallery
+=============*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+}
+
+.gallery__item {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;    
+}
+
+.gallery__item:hover {
+    box-shadow: 10px 10px var(--light-blue);
+}
+
+.gallery__photo {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.gallery__info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, var(--deep-pink-90), var(--navajo-white-90));
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    display: none;
+}
+
+.gallery__text {
+    padding-top: 35px;
+    background-image: url(images/Users.png);
+    background-repeat: no-repeat;
+    background-position: top;    
+}
+
+.gallery__item:hover .gallery__info {
+    display: flex;
+}
+
+
+/* Staff
+=============*/
+
+.staff {
+    width: 100%;
+    height: auto;
+    background-color: var(--light-blue);
+    color: var(--white);
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.staff__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.staff__item {
+    width: 20%;
+    padding-bottom: 85px;
+    border-right: 1px solid var(--white);
+    border-left: 1px solid var(--white);
+}
+
+.staff__number {
+    font-size: 72px;
+    font-weight: 700;
+    padding: 105px 0 35px;
+}
+
+.staff__official {
+    margin: 0;
+}
+
+
+/* Services
+=============*/
+
